@@ -1,6 +1,6 @@
 {
   "name": "@nonamich/ts-proto",
-  "version": "2.6.2",
+  "version": "1.0.0",
   "description": "",
   "main": "build/src/plugin.js",
   "repository": "github:nonamich/ts-proto",
