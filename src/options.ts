@@ -114,6 +114,7 @@ export type Options = {
   bigIntLiteral: boolean;
   typePrefix: string;
   typeSuffix: string;
+  nestJsRequiredSubMessage: boolean;
 };
 
 export function defaultOptions(): Options {
@@ -186,6 +187,7 @@ export function defaultOptions(): Options {
     bigIntLiteral: true,
     typePrefix: "",
     typeSuffix: "",
+    nestJsRequiredSubMessage: false,
   };
 }
 

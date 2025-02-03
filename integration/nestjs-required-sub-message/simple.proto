@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package simple;
+
+import "google/protobuf/timestamp.proto";
+
+message SubMessage {
+  int32 int32 = 1;
+  optional int32 optionalInt32 = 2;
+}
+
+message Message {
+  int32 int32 = 1;
+  optional int32 optionalInt32 = 2;
+  optional SubMessage optionalSubMessage = 3;
+  SubMessage requiredSubMessage = 4;
+  google.protobuf.Timestamp requiredTimestamp = 5;
+  optional google.protobuf.Timestamp optionalTimestamp = 6;
+}
+
+service SimpleService {
+  rpc GetMessage(Message) returns (Message);
+}

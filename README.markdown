@@ -23,7 +23,7 @@ If migrating to `@bufbuild/protobuf` is a blocker for you, you can pin your `ts-
 
 If you could file reports (or better PRs!) for any issues you come across while the release is still fresh, that would be greatly appreciated.
 
-Any tips or tricks for others on the migration would also be appreciated! 
+Any tips or tricks for others on the migration would also be appreciated!
 
 ## Table of contents
 
@@ -450,6 +450,10 @@ Generated code will be placed in the Gradle build directory.
 
   (Requires `nestJs=true`.)
 
+- With`--ts_proto_opt=nestJsRequiredSubMessage=true`, this option removes “null | undefined” from required fields with sub-message type.
+
+  (Requires `nestJs=true`.)
+
 - With `--ts_proto_opt=nestJs=true`, the defaults will change to generate [NestJS protobuf](https://docs.nestjs.com/microservices/grpc) friendly types & service interfaces that can be used in both the client-side and server-side of NestJS protobuf implementations. See the [nestjs readme](NESTJS.markdown) for more information and implementation examples.
 
   Specifically `outputEncodeMethods`, `outputJsonMethods`, and `outputClientImpl` will all be false, `lowerCaseServiceMethods` will be true and `outputServices` will be ignored.
@@ -591,33 +595,33 @@ Generated code will be placed in the Gradle build directory.
 
 - With `--ts_proto_opt=typeSuffix=MySuffix`, the generated interfaces, enums, and factories will have a suffix of `MySuffix` in their names.
 
-```protobuf
-message ProfileInfo {
-    int32 id = 1;
-    string bio = 2;
-    string phone = 3;
-}
+  ```protobuf
+  message ProfileInfo {
+      int32 id = 1;
+      string bio = 2;
+      string phone = 3;
+  }
 
-message Department {
-    int32 id = 1;
-    string name = 2;
-}
+  message Department {
+      int32 id = 1;
+      string name = 2;
+  }
 
-message User {
-    int32 id = 1;
-    string username = 2;
-    /*
-     ProfileInfo will be optional in typescript, the type will be ProfileInfo | null | undefined
-     this is needed in cases where you don't wanna provide any value for the profile.
-    */
-    optional ProfileInfo profile = 3;
+  message User {
+      int32 id = 1;
+      string username = 2;
+      /*
+      ProfileInfo will be optional in typescript, the type will be ProfileInfo | null | undefined
+      this is needed in cases where you don't wanna provide any value for the profile.
+      */
+      optional ProfileInfo profile = 3;
 
-    /*
-      Department only accepts a Department type or null, so this means you have to pass it null if there is no value available.
-    */
-    Department  department = 4;
-}
-```
+      /*
+        Department only accepts a Department type or null, so this means you have to pass it null if there is no value available.
+      */
+      Department  department = 4;
+  }
+  ```
 
 the generated interfaces will be:
 
@@ -643,7 +647,7 @@ export interface User {
 
 - With `--ts_proto_opt=noDefaultsForOptionals=true`, `undefined` primitive values will not be defaulted as per the protobuf spec. Additionally unlike the standard behavior, when a field is set to its standard default value, it *will* be encoded allowing it to be sent over the wire and distinguished from undefined values. For example if a message does not set a boolean value, ordinarily this would be defaulted to `false` which is different to it being undefined.
 
-This option allows the library to act in a compatible way with the [Wire implementation](https://square.github.io/wire/) maintained and used by Square/Block. Note: this option should only be used in combination with other client/server code generated using Wire or ts-proto with this option enabled.
+  This option allows the library to act in a compatible way with the [Wire implementation](https://square.github.io/wire/) maintained and used by Square/Block. Note: this option should only be used in combination with other client/server code generated using Wire or ts-proto with this option enabled.
 
 
 ### NestJS Support

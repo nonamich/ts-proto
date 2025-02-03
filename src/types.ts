@@ -739,6 +739,7 @@ export function toTypeName(
     type,
     (!isWithinOneOf(field) &&
       isMessage(field) &&
+      isSubMessageOptional(options, field) &&
       (options.useOptionals === false || options.useOptionals === "none")) ||
       (isWithinOneOf(field) && options.oneof === OneofOption.PROPERTIES) ||
       (isWithinOneOf(field) && field.proto3Optional) ||
@@ -916,5 +917,12 @@ export function isJsTypeFieldOption(options: Options, field: FieldDescriptorProt
   return (
     options.useJsTypeOverride &&
     (field.options?.jstype === FieldOptions_JSType.JS_NUMBER || field.options?.jstype === FieldOptions_JSType.JS_STRING)
+  );
+}
+
+export function isSubMessageOptional(options: Options, field: FieldDescriptorProto): boolean {
+  return (
+    field.type === FieldDescriptorProto_Type.TYPE_MESSAGE &&
+    !(options.nestJs === true && options.nestJsRequiredSubMessage === true)
   );
 }

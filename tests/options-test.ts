@@ -28,6 +28,7 @@ describe("options", () => {
         "lowerCaseServiceMethods": true,
         "metadataType": undefined,
         "nestJs": true,
+        "nestJsRequiredSubMessage": false,
         "noDefaultsForOptionals": false,
         "oneof": "properties",
         "onlyTypes": false,
