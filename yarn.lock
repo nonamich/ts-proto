@@ -1147,8 +1147,6 @@ __metadata:
     "@semantic-release/changelog": "npm:^6.0.3"
     "@semantic-release/commit-analyzer": "npm:^13.0.0"
     "@semantic-release/exec": "npm:^6.0.3"
-    "@semantic-release/git": "npm:^10.0.1"
-    "@semantic-release/github": "npm:^10.1.6"
     "@semantic-release/npm": "npm:^12.0.1"
     "@semantic-release/release-notes-generator": "npm:^14.0.1"
     "@tsconfig/strictest": "npm:^2.0.1"
@@ -1745,25 +1743,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/git@npm:^10.0.1":
-  version: 10.0.1
-  resolution: "@semantic-release/git@npm:10.0.1"
-  dependencies:
-    "@semantic-release/error": "npm:^3.0.0"
-    aggregate-error: "npm:^3.0.0"
-    debug: "npm:^4.0.0"
-    dir-glob: "npm:^3.0.0"
-    execa: "npm:^5.0.0"
-    lodash: "npm:^4.17.4"
-    micromatch: "npm:^4.0.0"
-    p-reduce: "npm:^2.0.0"
-  peerDependencies:
-    semantic-release: ">=18.0.0"
-  checksum: 10/1224b7508a2e471e4d99f65685bcccc305aa40820e12c9bc1d15e087dd47adf4339e574a29072e5c3428a4bd4b630d9ea5d37933e91e8c4de89c586d8c76873e
-  languageName: node
-  linkType: hard
-
-"@semantic-release/github@npm:^10.0.0, @semantic-release/github@npm:^10.1.6":
+"@semantic-release/github@npm:^10.0.0":
   version: 10.1.6
   resolution: "@semantic-release/github@npm:10.1.6"
   dependencies:
@@ -3210,7 +3190,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dir-glob@npm:^3.0.0, dir-glob@npm:^3.0.1":
+"dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
   dependencies:
@@ -5734,7 +5714,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
   dependencies:
@@ -6565,13 +6545,6 @@ __metadata:
   version: 7.0.2
   resolution: "p-map@npm:7.0.2"
   checksum: 10/b4a590038b991c17b9c1484aa8c24cb9d3aa8a6167d02b9f9459c9200c7d392202a860c95b6dcd190d51f5f083ed256b32f9cb5976785022b0111bab853ec58b
-  languageName: node
-  linkType: hard
-
-"p-reduce@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "p-reduce@npm:2.1.0"
-  checksum: 10/99b26d36066a921982f25c575e78355824da0787c486e3dd9fc867460e8bf17d5fb3ce98d006b41bdc81ffc0aa99edf5faee53d11fe282a20291fb721b0cb1c7
   languageName: node
   linkType: hard
 
