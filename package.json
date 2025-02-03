@@ -1,9 +1,9 @@
 {
-  "name": "ts-proto",
-  "version": "2.6.1",
+  "name": "@nonamich/ts-proto",
+  "version": "2.6.2",
   "description": "",
   "main": "build/src/plugin.js",
-  "repository": "github:stephenh/ts-proto",
+  "repository": "github:nonamich/ts-proto",
   "bin": {
     "protoc-gen-ts_proto": "./protoc-gen-ts_proto"
   },
