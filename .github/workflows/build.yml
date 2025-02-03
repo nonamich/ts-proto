@@ -67,6 +67,7 @@ jobs:
         id: release
         run: yarn semantic-release
         env:
+          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     outputs:
       release_version: ${{ steps.release.outputs.release_version }}
